@@ -44,8 +44,10 @@ dependencies {
 }
 
 launch4j {
-	outfile = 'TestSwing.exe'
-  	mainClassName = 'src.main.java.SwingDemo'
-	copyConfigurable = project.tasks.shadowJar.outputs.files
-  	icon = "${projectDir}/icons/myApp.ico"
+    mainClassName = 'SwingDemo'
+}
+
+task createMyApp(type: edu.sc.seis.launch4j.tasks.Launch4jExternalTask) {
+    launch4jCmd = 'launch4j-test'
+    outfile = 'MyApp.exe'
 }
